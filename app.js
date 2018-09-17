@@ -6,7 +6,7 @@ const jsonParser = require('body-parser').json;
 const logger = require('morgan');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/QA');
+mongoose.connect('mongodb://localhost:27017/QA', { useMongoClient: true });
 const db = mongoose.connection;
 
 db.on('error', err => {
